@@ -240,7 +240,7 @@ export default (overviewMonitor = 0) => {
                     eventbox.drag_dest_set(Gtk.DestDefaults.ALL, TARGET, Gdk.DragAction.COPY);
                     eventbox.connect('drag-data-received', (_w, _c, _x, _y, data) => {
                         const offset = Math.floor((Hyprland.active.workspace.id - 1) / NUM_OF_WORKSPACES_SHOWN) * NUM_OF_WORKSPACES_SHOWN;
-                        Hyprland.messageAsync(`dispatch movetoworkspacesilent ${index + offset},address:${data.get_text()}`)
+                        Hyprland.messageAsync(`dispatch movetoworkspace ${index + offset},address:${data.get_text()}`)
                         overviewTick.setValue(!overviewTick.value);
                     });
                 },
